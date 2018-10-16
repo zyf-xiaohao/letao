@@ -1,0 +1,82 @@
+@import 'base.less';
+#main {
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+    .search-form {
+        padding: 0.1rem;
+        input {
+            background-color: #fff;
+            height: 0.3rem;
+            border: 1px solid @main-color;
+            font-size: 0.12rem;
+            text-align: left;
+            margin-bottom: 0;
+            border-radius: 0.05rem;
+        }
+        button {
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+            height: 0.3rem;
+            color: #fff;
+            background-color: @main-color;
+            border: 1px solid @main-color;
+            border-radius: 0.05rem;
+        }
+    }
+    #productlist {
+        margin-bottom: 0.45rem;
+        .title {
+            line-height: 0.3rem;
+            text-align: center;
+            background-color: #eee;
+            font-size: 0.12rem;
+        }
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+        .content {
+            .mui-col-xs-6 {
+                padding: 0rem 0.05rem;
+                &:nth-child(n+3) {
+                    .product {
+                        margin-top: 0.1rem;
+                    }
+                }
+                .product {
+                    text-align: center;
+                    padding-bottom: 0.1rem;
+                    box-shadow: 0rem 0rem 0.02rem #ccc;
+                    p {
+                        text-align: center;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        /*设置成弹性盒子 */
+                        display: -webkit-box;
+                        /*显示的个数 */
+                        -webkit-line-clamp: 2;
+                        /* 属性规定框的子元素应该被水平或垂直排列。 */
+                        -webkit-box-orient: vertical;
+                    }
+                    .product-price {
+                        font-size: 0.12rem;
+                        span {
+                            color: #f00;
+                            margin-right: 0.1rem;
+                        }
+                        del {
+                            color: #ccc;
+                        }
+                    }
+                    button {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import 'base.less';
+body {
+    background-color: #fff;
+    padding: 0.45rem 0rem;
+}
+
+#main {
+    height: 100%;
+    position: relative;
+}
+
+#nav {
+    padding: 0.1rem;
+    a {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#banner {
+    padding: 0 0.1rem;
+    .mui-col-xs-8 {
+        a {
+            img {
+                height: 1.1rem;
+            }
+        }
+    }
+    .mui-col-xs-4 {
+        a {
+            img {
+                height: 2.2rem;
+            }
+        }
+    }
+    a {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#brand {
+    padding: 0.1rem;
+    a {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#sport,
+#women,
+#man {
+    padding: 0.1rem;
+    a {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        .mui-col-xs-6 {
+            padding: 0rem 0.05rem;
+            &:nth-child(n+3) {
+                .product {
+                    margin-top: 0.1rem;
+                }
+            }
+            .product {
+                text-align: center;
+                padding-bottom: 0.1rem;
+                box-shadow: 0rem 0rem 0.02rem #ccc;
+                p {
+                    text-align: left;
+                }
+                .product-price {
+                    font-size: 0.12rem;
+                    span {
+                        color: #f00;
+                        margin-right: 0.1rem;
+                    }
+                    del {
+                        color: #ccc;
+                    }
+                }
+                button {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+#women,
+#man {
+    .title {
+        margin-bottom: 0.1rem;
+    }
+}

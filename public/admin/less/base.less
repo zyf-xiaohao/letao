@@ -1,0 +1,143 @@
+//把html字体根元素字体设置为100
+html {
+    font-size: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+// 把body字体还原回到16px
+body {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* 定义乐淘的主题色 */
+
+@mainColor: #2f4050;
+
+/* 样式初始化文件 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* 移动端一般会设置盒模型为border-box 防止边框和padding撑大盒子超出屏幕宽度出现滚动条 */
+    box-sizing: border-box;
+    /*移动端a标签按住的高亮背景色 设置透明即可*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    /* 去除输入框的内外边框 */
+    border: 0;
+    outline: 0;
+}
+
+img {
+    /* 去掉图片的边框 */
+    border: none;
+    /* 去掉图片底部3px的间距 */
+    vertical-align: middle;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+#main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+    overflow: hidden;
+    .left {
+        width: 180px;
+        height: 100%;
+        background-color: @mainColor;
+        .user {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #243443;
+            >img {
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                border: 5px solid #ccc;
+            }
+            >h4 {
+                font-size: 18px;
+                color: #ccc;
+            }
+        }
+        .maue {
+            margin-top: 30px;
+            .list-group {
+                li {
+                    background-color: @mainColor;
+                    border: none;
+                    &.active{
+                        background-color: #243443;
+                    }
+                    >a{
+                        color: #ccc;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        flex: 1;
+        height: 100%;
+        .title{
+            background-color: #fff;
+            padding: 10px;
+            .pull-left{
+                background-color: @mainColor;
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 20px;
+            }
+            .pull-right{
+                margin-right: 10px;
+                a{
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: @mainColor;
+                    line-height: 38px;
+                }
+            }
+        }
+        .content{
+            margin: 10px;
+            background-color: #fff;
+            padding: 10px;
+            .table{
+                font-size: 14px;
+                thead{
+                    tr{
+                        th{
+                            text-align: center;
+                        }
+                    }
+                }
+                tbody{
+                    text-align: center;
+                    tr{
+                        height: 100px;
+                    }
+                }
+            }
+            .page-box{
+                font-size: 14px;
+            }
+        }
+    }
+}

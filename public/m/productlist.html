@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>自写首页</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet/less" href="less/productlist.less">
+    <script src="lib/less/less.js"></script>
+    <script src='js/rem.js'></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
+        <h4>商品列表</h4>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 添加区域滚动的父容器  -->
+        <div class="mui-scroll-wrapper" id="pullrefresh">
+            <!-- 添加区域滚动的子容器 -->
+            <div class="mui-scroll">
+                <!-- 搜索框 -->
+                <form action="#" class="search-form">
+                    <input type="search" class="input-search" placeholder="请输入要搜索的商品">
+                    <button type="button" class="btn-search">搜索</button>
+                </form>
+                <!-- 商品列表 -->
+                <section id="productlist">
+                    <div class="title">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-3">
+                                <a href="#"><span>上架时间</span><i class="fa fa-angle-down"></i></a>
+                            </div>
+                            <div class="mui-col-xs-3">
+                                <a href="#" data-sort-type="price" data-sort="1"><span>价格</span><i class="fa fa-angle-down"></i></a>
+                            </div>
+                            <div class="mui-col-xs-3">
+                                <a href="#" data-sort-type="num" data-sort="1"><span>销量</span><i class="fa fa-angle-down"></i></a>
+                            </div>
+                            <div class="mui-col-xs-3">
+                                <a href="#"><span>折扣</span><i class="fa fa-angle-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-6">
+                                <div class="product">
+                                    <a href="#" class="product-img">
+                                        <img src="images/product.jpg" alt="">
+                                    </a>
+                                    <p class="product-name">
+                                        adidas阿迪达斯 男式 场下休闲篮球鞋S83700
+                                    </p>
+                                    <div class="product-price">
+                                        <span>¥560.00</span>
+                                        <del>¥888.00</del>
+                                    </div>
+                                    <button class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <div class="product">
+                                    <a href="#" class="product-img">
+                                        <img src="images/product.jpg" alt="">
+                                    </a>
+                                    <p class="product-name">
+                                        adidas阿迪达斯 男式 场下休闲篮球鞋S83700
+                                    </p>
+                                    <div class="product-price">
+                                        <span>¥560.00</span>
+                                        <del>¥888.00</del>
+                                    </div>
+                                    <button class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html" class="active">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- 加载模块 -->
+    <div id="preloader_4">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- 商品内容模板 -->
+    <script id="productlistTpl" type="text/html">
+        {{ if data.length }} {{each data value}}
+        <div class="mui-col-xs-6">
+            <div class="product">
+                <a href="detail.html?id={{ value.id }}" class="product-img">
+                    <img src="{{ value.pic[0].picAddr }}" alt="">
+                </a>
+                <p class="product-name">
+                    {{ value.proName }}
+                </p>
+                <div class="product-price">
+                    <span>¥{{ value.price }}</span>
+                    <del>¥{{value.oldPrice}}</del>
+                </div>
+                <button class="mui-btn mui-btn-primary product-buy">立即购买</button>
+            </div>
+        </div>
+        {{/each}} {{ else }}
+        <p>暂无相关产品,敬请期待...</p>
+        {{ /if }}
+    </script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/mui/js/mui.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/productlist.js"></script>
+</body>
+
+</html>
